@@ -33,12 +33,14 @@ const DetailLocation = () => {
   const roomLocationList = roomLocationData || [];
 
   useEffect(() => {
+    console.log("🚀right here---->", "right here 36");
     if (roomLocationList.length > 0) {
       dispatch(setCurrentRoom(roomLocationList));
     }
   }, [dispatch, roomLocationList]);
 
   useEffect(() => {
+    console.log("🚀right here---->", "right here 43");
     const savedLocation = getLocalStorage("location");
     if (savedLocation && !infoLocation) {
       dispatch(setInfoLocationRoom(savedLocation));
@@ -47,9 +49,9 @@ const DetailLocation = () => {
 
   return (
     <div className="px-8">
-      <h2>
+      <h2 className="mb-2 text-[1.2vw] font-bold text-rose-800">
         Có {`${roomLocationList.length}`} chỗ tại {`${infoLocation?.tinhThanh}`}
-        {` ${infoLocation.tenViTri}`}
+        {` ${infoLocation?.tenViTri}`}
       </h2>
       <LocationList />
     </div>

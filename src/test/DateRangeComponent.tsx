@@ -16,9 +16,6 @@ const DateRangeComponent = () => {
   const refCalendar = useRef<HTMLDivElement>(null);
 
   const handleClickOutside = (e: any) => {
-    console.log("🚀e.target---->", e.target);
-    console.log("🚀refCalen---->", refCalendar.current);
-
     if (refCalendar.current && !refCalendar.current.contains(e.target)) {
       setIsOpen(false);
     }
@@ -41,6 +38,7 @@ const DateRangeComponent = () => {
       <input
         value={`${format(range[0].startDate, "dd/MM/yyyy")} đến ${format(range[0].endDate, "dd/MM/yyyy")}`}
         readOnly
+        className="text-green-700"
         onClick={() => setIsOpen((prev) => !prev)}
       />
       <div className="calendarWrap" ref={refCalendar}>

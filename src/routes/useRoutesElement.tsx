@@ -12,6 +12,8 @@ import { RoomBookingManagement } from "../modules/Admin/RoomBookingManagement";
 import HomePage from "../pages/HomePage";
 import { UserLayout } from "../layouts/UserLayout";
 import DetailLocation from "../pages/DetailLocation/DetailLocation";
+import RentalRoomList from "../pages/RentalRoomList/RentalRoomList";
+import RentalRoomDetail from "../pages/RentalRoomListDetail/RentalRoomDetail";
 
 const RejectedRouter = () => {
   const { currentUser } = useAppSelector((state) => state.userAuthentication);
@@ -29,7 +31,6 @@ const RejectedRouter = () => {
 
 const ProtectedRouter = () => {
   const { currentUser } = useAppSelector((state) => state.userAuthentication);
-  console.log("🚀currentUser---->", currentUser);
 
   if (currentUser === null) {
     return <Navigate to={PATH.LOGIN} />;
@@ -121,6 +122,22 @@ const useRouterElement = () => {
       element: (
         <UserLayout>
           <DetailLocation />
+        </UserLayout>
+      ),
+    },
+    {
+      path: PATH.RENTAL_ROOM,
+      element: (
+        <UserLayout>
+          <RentalRoomList />
+        </UserLayout>
+      ),
+    },
+    {
+      path: PATH.RENTAL_ROOM_DETAIL,
+      element: (
+        <UserLayout>
+          <RentalRoomDetail />
         </UserLayout>
       ),
     },

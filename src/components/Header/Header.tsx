@@ -24,7 +24,7 @@ const Header = () => {
         <a href="" className="flex items-center space-x-3">
           <img src="/img/logo-airbnb.svg" alt="airbnb logo" className="h-8" />
           <span className="whitespace-nowrap text-2xl font-bold text-rose-800 duration-100 duration-500 hover:text-red-600">
-            Airbnb
+            airbnb
           </span>
         </a>
       </div>

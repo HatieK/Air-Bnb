@@ -22,7 +22,7 @@ const CityItem: React.FC<CityItemProp> = ({ location }) => {
 
   const detailLocationPath = PATH.LOCATION + `/${location.id}`;
 
-  const handleSaveLocation = () => {
+  const handleSaveLocation = (locationId: number) => {
     navigate(detailLocationPath);
     dispatch(setInfoLocationRoom(location));
     setLocalStorage("location", location);
@@ -31,7 +31,7 @@ const CityItem: React.FC<CityItemProp> = ({ location }) => {
   return (
     <div
       className="cursor-pointer"
-      onClick={handleSaveLocation}
+      onClick={() => handleSaveLocation(location.id)}
       // to={detailLocationPath}
     >
       <div className="h-40 sm:h-80">

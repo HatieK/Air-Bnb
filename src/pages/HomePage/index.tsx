@@ -13,7 +13,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <InfoBookingRoom />
+      <InfoBookingRoom locationList={locationList} />
       <div className="px-8">
         {!locationLoading && <CityList locationList={locationList} />}
       </div>
